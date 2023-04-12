@@ -1,0 +1,25 @@
+doctype html
+html(lang = "en")
+  head
+    meta(description = "x-o game", content = "game")
+    link(rel = "stylesheet" href= "css/style.css")
+    link(rel = "stylesheet" href= "css/normalize.css")
+  body
+    h1
+      b x o 
+      |game
+    .theResults
+      div.y 
+        span.valueY 0 
+        span o
+      div.x 
+        span.valueX 0
+        span x
+    p.para it's 
+      span.change
+      |turn
+    .xoContainer
+      -for(let i = 1 ; i <= 9 ; i++)
+        div(class= "tile" id = "item" + i)
+    script(src="javascript/main.js")
+

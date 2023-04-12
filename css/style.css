@@ -60,7 +60,7 @@ p span {
   left: 50%;
   transform:translate(-50%,-50%);
   width:100%;
-  height: 2px;
+  height: 1.5px;
   background-color: #806868;
   transition:2s ease;
   animation: moveRight 2s linear;
@@ -122,6 +122,10 @@ p span {
   position: absolute;
   left: 5%;
   top:5%
+}
+.reset__game:hover{
+  transition: 0.5s ease;
+  box-shadow: 0 0 10px inset;
 }
 
 /* responsive */

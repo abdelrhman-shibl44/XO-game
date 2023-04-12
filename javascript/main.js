@@ -1,6 +1,8 @@
 let allTile = document.querySelectorAll(".xoContainer .tile");
 let para = document.querySelector(".para");
 let title = document.querySelector(".change");
+let resetBtn = document.querySelector(".reset__game")
+
 let innerTile = [];
 let currentTurn = ["x", "o"];
 let newTurn = currentTurn[Math.floor(Math.random() * currentTurn.length)];
@@ -120,7 +122,19 @@ allTile.forEach((item, i) => {
     winner();
   });
 });
-let newX = JSON.parse(sessionStorage.getItem("scoreX"));
-let newY = JSON.parse(sessionStorage.getItem("scoreY"));
-document.querySelector(".x .valueX").textContent = scoreX;
-document.querySelector(".y .valueY").textContent = scoreY;
+
+// reset game button 
+const ValueX = document.querySelector(".x .valueX")
+const ValueY = document.querySelector(".y .valueY")
+ValueX.textContent = scoreX;
+ValueY.textContent = scoreY;
+let keysToRemove = ["scoreX","scoreY"]
+resetBtn.addEventListener("click",() => {
+  for(let i = 0 ; i < keysToRemove.length ; i++){
+    sessionStorage.removeItem(keysToRemove[i])
+  }
+  scoreX = 0;
+  scoreY = 0;
+  ValueX.textContent = scoreX;
+  ValueY.textContent = scoreY;
+});
